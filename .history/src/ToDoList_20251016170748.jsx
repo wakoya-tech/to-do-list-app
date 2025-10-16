@@ -1,0 +1,46 @@
+import React,{useState} from 'react'
+
+function ToDoList() {
+    const [tasks,setTasks]=useState(["ciree nyaadhu","uffata jijiiradhu","barumsaa deemi"])
+    const [newTask,setNewTask]=useState("");
+    function handleInputChange(e){
+      setNewTask(e.target.value)
+    }
+    function addTask(){
+ setTasks(t=>[...t,newTask]) ;
+ setNewTask("");
+
+    }
+    function deleteTask(index){
+      
+    }
+    function moveTaskUp(index){
+
+    }
+    function moveTaskDown(index){
+
+    }
+  return (
+    <div className='to-do-list'>
+<h1>To-Do-List</h1>
+<div>
+    <input type="text" placeholder='enter a task' 
+    value={newTask} onChange={handleInputChange}/>
+ <button className='add-button' onClick={addTask}>Add </button>
+</div>
+<ol>
+    {tasks.map((task,index)=><li key={index}>
+    <span className='text'>
+        {task}
+    <button className='delete-button' onClick={deleteTask(index)}>Delete</button>
+    <button className='move-up-button'onClick={moveTaskUp(index)}>⬆️</button>
+    <button className='move-down-button'onClick={moveTaskDown(index)}>⬇️</button>
+   
+    </span>
+    </li>)}
+</ol>
+    </div>
+  )
+}
+
+export default ToDoList
