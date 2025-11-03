@@ -15,7 +15,6 @@ function ToDoList() {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
-
   function moveTaskUp(index) {
     if (index > 0) {
       const updatedTasks = [...tasks];
