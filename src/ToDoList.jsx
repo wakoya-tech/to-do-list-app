@@ -10,8 +10,7 @@ function ToDoList() {
       setTasks(t => [...t, newTask]);
       setNewTask("");
     }
-  }
-  
+  }  
   function deleteTask(index) {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
@@ -55,5 +54,4 @@ function ToDoList() {
     </div>
   );
 }
-
 export default ToDoList;
